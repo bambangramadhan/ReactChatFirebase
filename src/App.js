@@ -54,12 +54,11 @@ const App = () => {
       <Router>
         <Switch>
           <Route exact path="/" component={Home} />
-          <PrivateRoute path="/chat" authenticated={authenticated} />
-          <PublicRoute path="/signup" authenticated={authenticated} />
-          <PublicRoute path="/login" authenticated={authenticated} />
+          <PrivateRoute path="/chat" component={Chat} authenticated={authenticated} />
+          <PublicRoute path="/signup" component={Signup} authenticated={authenticated} />
+          <PublicRoute path="/login" component={Login} authenticated={authenticated} />
         </Switch>
       </Router>
-      // <h2>12</h2>
     );
   };
 }
