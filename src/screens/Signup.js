@@ -42,10 +42,10 @@ const SignUp = () => {
         </h1>
         <p>Fill in the form below to create an account.</p>
         <div>
-          <input placeholder="Email" name="email" type="email" onChange={(e) => setEmail(e.target.name)} value={email}></input>
+          <input placeholder="Email" name="email" type="email" onChange={(e) => setEmail(e.target.value)} value={email}></input>
         </div>
         <div>
-          <input placeholder="Password" name="password" type="password" onChange={(e) => setPassword(e.target.password)} value={password}></input>
+          <input placeholder="Password" name="password" type="password" onChange={(e) => setPassword(e.target.value)} value={password}></input>
         </div>
         <div>
           {error ? <p>{error}</p> : null}
@@ -54,7 +54,7 @@ const SignUp = () => {
           <button onClick={googleSignIn} type="button">
             Sign up with Google
           </button>
-          <button type="button" onClick={this.githubSignIn}>
+          <button type="button" onClick={githubSignIn}>
             Sign up with GitHub
           </button>
         </div>
