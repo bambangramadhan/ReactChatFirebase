@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { auth, db } from '../services/firebase';
+import { auth, db, messaging } from '../services/firebase';
 
 const Chat = () => {
 
@@ -23,6 +23,16 @@ const Chat = () => {
       setReadError(error.message);
     }
   }, []);
+
+  useEffect(() => {
+    messaging.requestPermission().then(() => {
+      return messaging.getToken()
+    }).then(token => {
+      console.log('token', token);
+    }).catch(err => {
+      console.log('err', err);
+    })
+  })
 
   const handleSubmit = async (e) => {
     e.preventDefault();
